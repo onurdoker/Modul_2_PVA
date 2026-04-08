@@ -48,11 +48,28 @@ mean(
   x$not[c(1, 3, 10)]
 ) # 2.62
 
-# Find the data for the first three students in class 3
-
+# Find all students int he 3rd grade
 x[
-  1:3,
-  x[
-    x$sinif == 3,
-  ]
+  x$sinif == 3,
 ]
+
+# Find grades of all students in the 3rd grade
+x$not[
+  x$sinif == 3
+]
+
+# Calculating the average of the grades of all students in the 3rd grade
+mean(
+  x$not[
+    x$sinif == 3
+  ]
+) # 2.459281
+
+round(
+  mean(
+    x$not[
+      x$sinif == 3
+    ]
+  ),
+  digits = 2
+) # 2.46
