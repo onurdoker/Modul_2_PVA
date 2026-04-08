@@ -73,3 +73,100 @@ round(
   ),
   digits = 2
 ) # 2.46
+
+# Changing the class information if the 3th grade studens in the dataset to 4th grade
+x2 <- x
+x2$sinif[
+  x2$sinif == 3
+] <- 4
+
+# Creating a new dataset by excluding the 1st grade students
+x3 <- x[
+  x$sinif != 1,
+]
+View(x3)
+
+x3_2 <- x[
+  x$sinif %in% c(2, 3, 4),
+]
+View(x3_2)
+
+# Determining how many students named Ali are in the dataset
+sum(
+  x$isim == 'Ali'
+) # 22
+
+# Calculating the average of the grade of all students named Ali
+mean(
+  x$not[
+    x$isim == 'Ali'
+  ]
+) # 2.739545
+
+round(
+  mean(
+    x$not[
+      x$isim == 'Ali'
+    ]
+  ),
+  digits = 2
+) # 2.74
+
+# all students whose name is Ali
+x[
+  x$isim == 'Ali',
+]
+
+# all students who are in the 4th grade
+x[
+  x$sinif == 4,
+]
+
+# all students who are in the 4th grade and whose name is Ali
+x[
+  x$isim == 'Ali' & x$sinif == 4,
+]
+
+# Finding the count of the students who are in the 4th grade and whose name is Ali
+sum(
+  x$isim == 'Ali' & x$sinif == 4
+) # 8
+
+#  Calculating the average grade of students who are 4th grade and whose name is Ali
+mean(
+  x$not[
+    x$isim == 'Ali' & x$sinif == 4
+  ]
+) # 2.60875
+
+round(
+  mean(
+    x$not[
+      x$isim == 'Ali' & x$sinif == 4
+    ]
+  ),
+  digits = 2
+) # 2.61
+
+# Identify the students who are in the 3rd or 4th grade in the dataset
+x[
+  x$sinif == 3 | x$sinif == 4,
+]
+
+x[
+  x$sinif %in% c(3, 4),
+]
+
+
+# Calculating the average of the grades of students in the dataset for 2-usual value interval
+# mean(not) ± (2*sd(not))
+sum(
+  x$not < mean(x$not) - (2 * sd(x$not)) | x$not > mean(x$not) + (2 * sd(x$not))
+) # 48
+
+x4 <- x[
+  x$not < mean(x$not) - (2 * sd(x$not)) | x$not > mean(x$not) + (2 * sd(x$not)),
+]
+View(x4)
+
+save.image(file = "lesson03.RData")
