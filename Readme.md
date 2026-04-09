@@ -1,6 +1,6 @@
 # R Programming Exercises
 
-This repository contains R programming exercises from the Data Analysis School (Veri Analiz Okulu) - Module 2.
+This repository contains R programming exercises from the Data Analysis School (Veri Analiz Okulu) - Module 2. The Analysis of Panel Data (Panel Veri Analizi)
 
 ## Contents
 
@@ -11,7 +11,7 @@ This lesson covers fundamental R programming concepts:
 - **Mathematical Operations**: Arithmetic operations (+, -, *, /)
 - **Variables**: Creating and manipulating variables
 - **Vectors**: Element-wise operations on vectors
-- **Functions**: 
+- **Functions**:
   - Built-in functions (round, factorial, mean, sample)
   - Creating custom functions
   - Function arguments and default values
